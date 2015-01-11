@@ -1,0 +1,99 @@
+<style>
+    .uploader{
+        width: 200px;
+        height: 150px;
+        background-color: rgba(33,33,33,0.5);
+        margin-top: -184px;
+        z-index: 100;
+        text-align: center;
+        vertical-align: middle;
+        position: absolute;
+        padding-top:60px;
+    }
+</style>
+<div class="modal-dialog">
+    <div class="modal-content">
+
+        <div class='modal-header'>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 ng-hide='newEvent'>Edit User: {{entity.name}}</h3>
+            <h3 ng-show='newEvent'>New User</h3>
+        </div>
+        <form>
+            <fieldset>
+                <div class='modal-body'>
+                    <div class="form-group">
+                        <label>Gafete</label>
+                        <input class="form-control" type='text' ng-model="entity.code"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Folio</label>
+                        <input class="form-control" type='text' ng-model="entity.folio"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" type='text' ng-model="entity.name"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" type='text' ng-model="entity.email"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Organization</label>
+                        <input class="form-control" type='text' ng-model="entity.organization"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Job</label>
+                        <input class="form-control" type='text' ng-model="entity.job"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input class="form-control" type='text' ng-model="entity.phone"/>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="entity.delivered">Delivered
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="entity.status">Status
+                        </label>
+                    </div>
+
+                    <!--<div class="form-group" ng-controller="UploadController">-->
+                        <!--<label>Image</label>-->
+                        <!--<input type="hidden" data-ng-model="entity.image" >-->
+
+                        <!--<input type="file" ng-file-select="onFileSelect($files)" style="display:none" id="image">-->
+                        <!--<div class="input-append">-->
+                            <!--<img ng-src="{{image.preview}}" width="200" height="150"><br/>-->
+                            <!--<a class="btn btn-info" style="width: 200px" onclick="$('input[id=image]').click();">Browse</a>-->
+                        <!--</div>-->
+
+                        <!--<div class="uploader" ng-show="image.file">-->
+                            <!--<button class="btn btn-info btn-circle btn-lg" ng-click="startUpload()" ng-show="image.progress < 0">-->
+                                <!--<i class="fa fa-cloud-upload"></i>-->
+                            <!--</button>-->
+                            <!--<div class="progress progress-striped active" ng-show="image.progress >= 0">-->
+                                <!--<div class="progress-bar" role="progressbar"-->
+                                     <!--aria-valuenow="{{image.progress}}"-->
+                                     <!--aria-valuemin="0"-->
+                                     <!--aria-valuemax="100"-->
+                                     <!--style="width: {{progress[$index]}}%">-->
+                                    <!--<span class="sr-only">{{image.progress}}% Complete</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class='modal-footer'>
+                    <a class="btn" data-dismiss="modal" ng-click='cancel()'>Cancel</a>
+                    <button type='submit' class="btn btn-danger" data-dismiss="modal" ng-click="remove()">Delete</button>
+                    <button type='submit' class="btn btn-primary" data-dismiss="modal" ng-click="persist()">Save</button>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+</div>

@@ -1,31 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app='votr'>
-  <head>
-    <title>Votr - Easy Voting with Your Phone!</title>
-    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-    <link rel='stylesheet' href='/stylesheets/bootstrap-responsive.min.css' />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/bootstrap.min.js"></script>
-    <script src="/javascripts/angular.min.js"></script>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Conferences Server - Admin Panel v1.0</title>
+
+    <!-- Core CSS - Include with every page -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+
+    <!-- Page-Level Plugin CSS - Dashboard -->
+    <link href="/stylesheets/plugins/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/plugins/timeline/timeline.css" rel="stylesheet"/>
+    <link href="/stylesheets/datetimepicker.css" rel="stylesheet"/>
+
+    <!-- SB Admin CSS - Include with every page -->
+    <link href="/stylesheets/sb-admin.css" rel="stylesheet"/>
+
+    <link href="/stylesheets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <script src="/javascripts/uploader/angular-file-upload-shim.min.js"></script>
+
+    <script src="/javascripts/angular.1.2.3.js"></script>
     <script src="/javascripts/angular-resource.min.js"></script>
     <script src="/javascripts/angular-route.min.js"></script>
+    <script src="/javascripts/moment.min.js"></script>
+    <script src="/javascripts/datetimepicker.js"></script>
+
+    <script src="/javascripts/uploader/angular-file-upload.min.js"></script>
+
     <script src="/javascripts/votr.js"></script>
-  </head>
-  <body ng-init="username='{{username}}'">
-    <div class="container">
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div style="margin-left:20px">
-          <a class="brand" href="#/">Votr Admin</a>
-          <ul class="nav">
-            <li><a href="#/">Home</a></li>
-            <li ng-show="loggedIn"><a href="#/logout">Logout</a></li>
-          </ul>
-          </div>
+</head>
+
+<body ng-init="username='{{username}}'">
+
+<div id="wrapper" ng-show="loggedIn">
+
+    {{> topbar}}
+    {{> navbar}}
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div ng-view></div>
+
+            </div>
+            <!-- /.col-lg-12 -->
         </div>
-      </div>
-      <div class="content" ng-view></div>
+        <!-- /.row -->
     </div>
-  </body>
+    <!-- /#page-wrapper -->
+
+</div>
+<div ng-show="!loggedIn" ng-view></div>
+<!-- /#wrapper -->
+<!-- /#page-wrapper -->
+
+<!-- Core Scripts - Include with every page -->
+<script src="/javascripts/jquery-1.10.2.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+<!-- Page-Level Plugin Scripts - Dashboard -->
+<script src="/javascripts/plugins/morris/raphael-2.1.0.min.js"></script>
+<script src="/javascripts/plugins/morris/morris.js"></script>
+
+<!-- SB Admin Scripts - Include with every page -->
+<script src="/javascripts/sb-admin.js"></script>
+
+<!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+<script src="/javascripts/demo/dashboard-demo.js"></script>
+
+<!-- Page-Level Plugin Scripts - Tables -->
+<script src="/javascripts/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="/javascripts/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+</body>
 </html>

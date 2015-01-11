@@ -1,0 +1,14 @@
+<div class="alert alert-{{message.type}}" style="display:none;">
+    <button type="button" class="close" aria-hidden="true">×</button>
+    <h4>
+        {{message.title}}
+        <a ng-show="message.link" href="{{message.url}}" target="_blank" class="btn btn-outline btn-success" style="margin-left: 20px">
+            {{message.link}} »
+        </a>
+    </h4>
+    <p>{{message.text}}</p>
+    <p>
+        <button ng-show="message.dismiss" type="button" onclick="$('.alert').hide()" ng-click="message.tryAgain()" class="btn btn-danger">Try again</button>
+        <button ng-show="message.dismiss" type="button" onclick="$('.alert').hide()" class="btn btn-default">Dismiss</button>
+    </p>
+</div>
